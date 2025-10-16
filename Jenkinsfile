@@ -4,7 +4,7 @@ pipeline {
         stage('Clone') {
             steps {
                 // Corrected git step to explicitly use the 'main' branch
-                git branch: 'main', url: 'https://github.com/sreekanth-sree/Jenkinstestrepo.git'
+                git 'https://github.com/sreekanth-sree/Jenkinstestrepo.git'
             }
         }
         stage('Build') {
