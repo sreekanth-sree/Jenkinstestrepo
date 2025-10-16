@@ -3,17 +3,20 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/sreekanth-sree/Jenkinstestrepo.git'
+                // Corrected git step to explicitly use the 'main' branch
+                git branch: 'main', url: 'https://github.com/sreekanth-sree/Jenkinstestrepo.git'
             }
         }
         stage('Build') {
             steps {
-               sh 'echo 'Building the project...'
+                // Corrected step: Use the 'echo' step for simple logging
+                echo 'Building the project...'
             }
         }
         stage('Test') {
             steps {
-               sh  'echo 'Running tests...'
+                // Corrected step: Use the 'echo' step for simple logging
+                echo 'Running tests...'
             }
         }
         stage('Deploy') {
